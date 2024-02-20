@@ -1,0 +1,1251 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Dijkstra/">
+      
+      
+        <link rel="next" href="../forwardstar/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+    
+    
+      
+        <title>最短路问题$(2)$ - summitsoul's note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="summitsoul&#39;s note" class="md-header__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            summitsoul's note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              最短路问题$(2)$
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="summitsoul&#39;s note" class="md-nav__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    summitsoul's note
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    迁移
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            迁移
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    移植
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    dp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            dp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/2066%E6%9C%BA%E5%99%A8%E5%88%86%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    本题解面向对象为像我一样的蒟蒻，只涉及到求最大盈利值，不涉及到输出分多少台，请已经会第一问的巨佬们移位(｀・ω・´)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    图论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            图论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    $最近公共祖先(LCA)$
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拓扑排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最小生成树$(MST)$
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dijkstra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最短路问题$（1）$
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    最短路问题$(2)$
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    最短路问题$(2)$
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      闲扯
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闲扯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原因
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bellman-ford" class="md-nav__link">
+    <span class="md-ellipsis">
+      $Bellman-Ford$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$Bellman-Ford$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体例子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      $SPFA$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$SPFA$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forwardstar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    闲扯
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1967%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    题面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            数论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../numtry/%E8%B4%A8%E6%95%B0%E7%AD%9B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    质数筛
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../numtry/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快速幂
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/STL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      闲扯
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闲扯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原因
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bellman-ford" class="md-nav__link">
+    <span class="md-ellipsis">
+      $Bellman-Ford$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$Bellman-Ford$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体例子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      $SPFA$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$SPFA$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2">最短路问题$(2)$</h1>
+<h2 id="_1">闲扯</h2>
+<h3 id="_2">原因</h3>
+<p>同上一篇（$懒得打字了$）。</p>
+<h3 id="_3">背景</h3>
+<p>在图论题当中，我们有时会遇到负权边，在这时我们之前提到过的$Dijkstra$就无法发挥作用了，我们来看这样一个简单的场景。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201116093221013-1192353531.png" />
+我们从点$1$出发，我们在循环的时候会将点$3$先标记上，这样$dis[3] = 1$，但是我们明显可以观察得出，最短的路径应该是$1\rightarrow2\rightarrow3$应该$dis[3] = -2$，但是此时我们已经把点$3$标记上了，所以不可以再进行修改，也就会得出错误的答案。这时，就需要一种可以处理负权边的算法了。</p>
+<h2 id="bellman-ford">$Bellman-Ford$</h2>
+<h3 id="_4">背景</h3>
+<p>(不是要说$SPFA$嘛划去)，其实对于负权边的图，最开始出现的算法是$Bellman-Ford$，一会再谈$SPFA$，因为$SPFA$都是基于$Bellman-Ford$上通过优化而得出的，我们首先要对$Bellman-Ford$有一个了解。$Bellman-Ford$是由$Richard Bellman$和$Lester Ford$两位大神创造的，因此得名。</p>
+<h3 id="_5">分析</h3>
+<p>$Bellman-Ford$的百度解释如下(看看即可，反正也看不明白ヽ(ー_ー)ノ)：对于给定的带权（有向或无向）图$G = (V, E)$, 其源点为$s$，加权函数$w$是边集$E$的映射。对图$G$运行$Bellman - Ford$算法的结果是一个布尔值，表明图中是否存在着一个从源点$s$可达的负权回路。若不存在这样的回路，算法将给出从源点$s$到图$G$的任意顶点$v$的最短路径$d[v]$。我的理解是将$Bellman-Ford$算法分为三个阶段：首先是要初始化，将除了起点之外的顶点的最短距离设为无穷大$d[i] = +\infty, d[0] = 0$；下一步是迭代求解，反复的对每条边进行松弛(松弛指的是将所推出来的权值与到这个点原来的权值做对比，取小的)，使每个顶点的最短距离$d[i]$估计值逼近最短距离(运行$n - 1$次)；最后一步则是要检验负权回路，通过松弛的操作来判断每一条边的两个端点是否收敛，如果存在的话，那么说明存在负权回路返回$false$，否则的话返回$true$并输出$d[i]$。我们可以得出$Bellman-Ford$的时间复杂度为$O(VE)$，$(V为节点数，E为边数)$。</p>
+<h3 id="_6">具体例子</h3>
+<p>我们来看这样的一个图。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201116111055028-1613731875.png" />
+在这个例子中，我们设$w[i, j]$为各个顶点之间的距离，我们先用邻接表来表示。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201116111426854-261794452.png" />
+我们设$d[i]$为从点$1$至点$i$的最短路径，并将它们初始化$d[i] = +\infty, d[0] = 0$。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201116111627454-418666599.png" />
+(1)第一步求$d[2]$的值$d[1] + w[1, 2] &lt; d[2] + w[2, 2] &lt; d[3] + w[3, 2] &lt; d[4] + d[4, 2];$所以我们得出$d[2] = d[1] + w[1, 2] = 2;$。
+(2)第二步求$d[3]$的值$d[1] + w[1, 3] &lt; d[2] + w[2, 3] &lt; d[3] + w[3, 3] &lt; d[4] + d[4, 3];$所以我们得出$d[3] = d[1] + w[1, 3] = 5;$。
+(3)第二步求$d[4]$的值$d[2] + w[2, 4] &lt; d[1] + w[1, 4] &lt; d[3] + w[3, 4] &lt; d[4] + d[4, 4];$所以我们得出$d[2] = d[1] + w[1, 2] = 1;$。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201116112810483-1590784620.png" />
+可以看出，我们一共进行了$3$次松弛操作。
+接下来继续进行松弛操作来检查是否存在负权边，若果发现$d[i]$的值变小，那么说明存在负权边并退出，否则的话就输出最短路径。显然我们可以看出$d[4] + w[4, 2] &lt; d[4]$，说明存在负权边。</p>
+<h3 id="_7">优化</h3>
+<p>我们来分析一下$Bellman-Ford$算法，可以看出最外层的循环迭代次数为$n - 1$次，但实际上，如果不存在负权回路，最外层的循环次数应该远小于$n - 1$。我们来思考，在一次迭代当中，如果松弛的操作未被执行，那么说明在这次迭代当中所有的边都没有被松弛，这就说明任意的两点之间的距离在以后的迭代中不会再可能被缩小了，因此，迭代过程应该被提前结束。在这里我们可以设置一个$bool$型变量$relaxed$，初始值为$false$，如果在一次迭代过程中，有边被成功松弛，那么价格$relaxed$设置为$true$，否则的话说明没有执行松弛操作，我们就可以结束外层循环。</p>
+<pre><code>bool Bellman_Ford_Plus(int x){
+    bool relaxed;
+    for(int i = 1; i &lt;= n; i++) d[i] = Max;
+    d[x] = 0;
+    for(int i = 1; i &lt; n; i++){
+        relaxed = false;
+        for(int j = 1; j &lt;= n; j++)
+            for(int k = 1; k &lt;= n; k++)
+                if(d[j] &gt; d[k] + w[j][k]){
+                    d[j] = d[k] + w[j][k];
+                    relaxed = true;
+                }
+        if(!relaxed) break;
+    }
+    for(int i = 1; i &lt;= n; i++) //判断是否有负环 
+        for(int j = 1; j &lt;= n; j++)
+            if(d[i] &gt; d[j] + w[i][j])
+                return 1;   //有负环 
+    return 0;               //无负环 
+}
+</code></pre>
+<h2 id="spfa">$SPFA$</h2>
+<h3 id="_8">分析</h3>
+<p>终于到了今天的重头戏了，$SPFA$是基于$Bellman-Ford$的更进一步的优化，其时间复杂度一般情况下为$O(kE)$，一般$k \leq 2$。$SPFA$和$Bellman-Ford$的实质都是更新最短路径的估计值，但是$SPFA$的关键在于:$\textbf{只有那些在前一遍松弛过程中改变了距离估计值的点，才可能引起他们的临界点的距离估计值的改变}$。
+在编写代码时，我们是通过队列来实现这个操作的，首先将各个点的距离估计值设为$+\infty$，并将起始点加入到队列当中。我们每次从队首取出一个点$i$，遍历与$i$相联通的点$j$，如果$d[j] &gt; d[i] + w[i][j]$，则需要进行松弛$d[j] = d[i] +w[i][j]$，并将其存入最短路，并可以记录这个顶点进入进队次数来判断是否存在负环。直到队空的时候停止。</p>
+<h3 id="_9">代码实现</h3>
+<p>我是以<a href="https://www.luogu.com.cn/problem/P3371">洛谷P3371 【模板】单源最短路径（弱化版）</a>为原题做的模板。</p>
+<pre><code>#include&lt;queue&gt; 
+#include&lt;cstdio&gt;
+#define INF 2147483647
+using namespace std;
+const int N = 500010;
+int n, m, s, cnt = 0;
+int head[N], dis[10010];    //dis记录到起点的长度   
+bool vis[N];    //vis记录是否在队
+struct edge{
+    int to, next, w;
+}e[N];
+void add(int u, int v, int w){
+    e[++cnt].next = head[u];
+    e[cnt].to = v;
+    e[cnt].w = w;
+    head[u] = cnt;
+}
+void SPFA(){
+    for(int i = 1; i &lt;= n; i++){
+        dis[i] = INF;
+        vis[i] = false;
+    }
+    dis[s] = 0; //起点到本身的距离为0
+    queue&lt;int&gt; q;
+    q.push(s);  //起点入队 
+    vis[s] = true;
+    while(!q.empty()){  //如果队列不为空 
+        int u = q.front();  //取出队首 
+        q.pop();    //将其弹出 
+        vis[u] = false; 
+        for(int i = head[u]; i; i = e[i].next){ //链式前向星遍历 
+            int v = e[i].to;
+            if(dis[v] &gt; dis[u] + e[i].w){   //松弛 
+                dis[v] = dis[u] + e[i].w;
+                if(!vis[v]){    //如果没有入队 
+                    q.push(v);
+                    vis[v] = true;
+                }
+            }
+        }
+    }
+}
+int main(){
+    scanf(&quot;%d %d %d&quot;, &amp;n, &amp;m, &amp;s);
+    for(int i = 1; i &lt;= m; i++){
+        int u, v, w; scanf(&quot;%d %d %d&quot;, &amp;u, &amp;v, &amp;w);
+        add(u, v, w); //有向图, 无向加 add(v, u, w);
+    }
+    SPFA();
+    for(int i = 1; i &lt;= n; i++)
+        if(s == i) printf(&quot;0 &quot;);
+        else printf(&quot;%d &quot;, dis[i]);
+    return 0;
+} 
+</code></pre>
+<p>我们模拟一下上面的图。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201116144016432-651380626.png" />
+结果非常正确，得到了正确的算法。那么这就是$Bellman-Ford$和$SPFA$算法了，$SPFA$的速度非常快但是在算法竞赛中，如果是稠密图的话，出题人往往会卡常，（例如NOI2018D1T1），所以在为正权图时，还是要用$Dijkstra$算法，当出现负权图时我们就可以大胆的使用$SPFA$了。
+完结撒花ヾ(✿ﾟ▽ﾟ)ノ</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      
+    
+  </body>
+</html>

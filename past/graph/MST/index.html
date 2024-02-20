@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../topo/">
       
-        <link rel="next" href="past/">
+      
+        <link rel="next" href="../Dijkstra/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
-        <title>Welcome to MkDocs - summitsoul's note</title>
+        <title>最小生成树$(MST)$ - summitsoul's note</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -38,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#mst" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="summitsoul&#39;s note" class="md-header__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
+    <a href="../../.." title="summitsoul&#39;s note" class="md-header__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              最小生成树$(MST)$
             
           </span>
         </div>
@@ -187,7 +189,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="summitsoul&#39;s note" class="md-nav__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
+    <a href="../../.." title="summitsoul&#39;s note" class="md-nav__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -197,6 +199,71 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -216,130 +283,7 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            Home
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Welcome to MkDocs
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Welcome to MkDocs
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project layout
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -353,7 +297,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             迁移
@@ -367,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -425,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/dp/2066%E6%9C%BA%E5%99%A8%E5%88%86%E9%85%8D/" class="md-nav__link">
+      <a href="../../dp/2066%E6%9C%BA%E5%99%A8%E5%88%86%E9%85%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,19 +395,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -477,7 +423,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             图论
@@ -491,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/LCA/" class="md-nav__link">
+      <a href="../LCA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -512,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/topo/" class="md-nav__link">
+      <a href="../topo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -530,10 +476,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="past/graph/MST/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    最小生成树$(MST)$
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -542,6 +508,116 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      闲谈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闲谈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原因
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kruskal" class="md-nav__link">
+    <span class="md-ellipsis">
+      $Kruskal$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$Kruskal$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      并查集
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -554,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/Dijkstra/" class="md-nav__link">
+      <a href="../Dijkstra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -575,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/SPFA/" class="md-nav__link">
+      <a href="../SPFA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/forwardstar/" class="md-nav__link">
+      <a href="../forwardstar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/1967%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" class="md-nav__link">
+      <a href="../1967%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/numtry/%E8%B4%A8%E6%95%B0%E7%AD%9B/" class="md-nav__link">
+      <a href="../../numtry/%E8%B4%A8%E6%95%B0%E7%AD%9B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -704,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/numtry/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../numtry/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/misc/basic/" class="md-nav__link">
+      <a href="../../misc/basic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/misc/STL/" class="md-nav__link">
+      <a href="../../misc/STL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,20 +923,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      闲谈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闲谈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原因
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Project layout
+      背景
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kruskal" class="md-nav__link">
+    <span class="md-ellipsis">
+      $Kruskal$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$Kruskal$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      并查集
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -879,21 +1027,91 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h1 id="mst">最小生成树$(MST)$</h1>
+<h2 id="_1">闲谈</h2>
+<h3 id="_2">原因</h3>
+<p>又是蒟蒻的一篇为了记忆写的博客，扎实知识点。</p>
+<h3 id="_3">背景</h3>
+<p>很多图论的题目会首先要求我们将图转化成树状结构再进行一系列的操作，而在这篇文章当中我将会介绍一种最常见的算法$Kruskal$来解决最小生成树这个问题。</p>
+<h2 id="kruskal">$Kruskal$</h2>
+<h3 id="_4">背景</h3>
+<p>$Kruskal$作为最经典的最小生成树算法，在稍微改动后也可以求出最大生成树。是由$Joseph Bernard Kruskal$发明的，它的时间复杂度为$O(elog_2e)$，适合疏松图的最小生成树。</p>
+<h3 id="_5">分析</h3>
+<p>$Kruskal$的思路为：假设连通网$G=（V，E）$，令最小生成树的初始状态为只有$n$个顶点而无边的非连通图$T=（V，{}）$，图中每个顶点自成一个连通分量。在$E$中选择代价最小的边，若该边依附的顶点分别在$T$中不同的连通分量上，则将此边加入到$T$中；否则，舍去此边而选择下一条代价最小的边。依此类推，直至$T$中所有顶点构成一个连通分量为止。我们用比较正常的方法来(翻译)一遍。首先我们需要一个前置技巧：并查集。</p>
+<h4 id="_6">并查集</h4>
+<p>并查集并不是本篇文章的重点，只将简单介绍它的用法和基本思想。并查集是一种可以快速的求出每个节点所在的集合的数据结构，我们首先用数组$fa[N]$来记录它隶属哪个集合，第一步是初始化，将每一个节点的所在集合定义为它自己$fa[i] = i$我们用一个$find$函数来进行查找的工作</p>
+<pre><code>int find(int x){
+    if(x != fa[x]) fa[x] = find(fa[x]);
+    return fa[x];
+}
 </code></pre>
+<p>通过这个操作我们就可以求出它所在的集合了，如果想要将两个节点所在的集合合并的话，那么就将第一个节点的$fa$值设为第二个节点的值即可。</p>
+<p>我们回归到正题$Kruskal$，$Kruskal$算法是根据边的权值用递增的方式，一次找出边权值最小的边来建立最小生成树，并且每次所添加的边不能造成生成树的回路，这就需要我们刚才提到的并查集来做到了，直到找到第$N - 1$个边为止。
+我们来看一个具体例子来更好的理解
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201117203000986-513702193.png" />
+我们首先将图中所有的边权快排。
+首先将最短的边$(1, 3)$加入生成树中
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201117203310030-1799287179.png" />
+第二步将$(3, 4)$加入生成树中
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201117203454361-888068130.png" />
+第三步将$(3, 5)$加入生成树中
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201117203725295-356019315.png" />
+<strong>注意</strong>接下来的一部非常关键，需要我们之前提到的并查集来实现，我们发现如果按照边权来添加的话，应该添加的边为$(4, 5)$但是我们发现$4$和$5$已经都被加入到生成树当中了，所以我们将其跳过添加$(4, 2)$
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201117203853362-727484769.png" />
+这时，我们已经建立了$4$条边，程序结束。
+在进行每次加边时，我们需要考虑
+$$1、它是否是剩下的边中最小的 
+2、加入它是否会生成环$$</p>
+<h3 id="_7">代码实现</h3>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#define N 100010
+using namespace std;
+int n, m, ans = 0, cnt = 0;
+int head[N], fa[N];
+struct edge{
+    int u, v, w;
+}e[N &lt;&lt; 1];
+inline int read(){
+    int s = 0;
+    char ch = getchar();
+    while(ch &lt; '0' || ch &gt; '9') ch = getchar();
+    while(ch &gt;= '0' &amp;&amp; ch &lt;= '9'){s = s * 10 + ch - '0'; ch = getchar();}
+    return s;
+}
+bool cmp(edge a, edge b){return a.w &lt; b.w;}
+int find(int x){    //!!!非常重要,并查集模板 
+    if(x != fa[x]) fa[x] = find(fa[x]);
+    return fa[x];
+}
+void Kruskal(){ //Kruskal模板 
+    sort(e + 1, e + m + 1, cmp);
+    for(int i = 1; i &lt;= n; i++) fa[i] = i;
+    for(int i = 1; i &lt;= m; i++){
+        int x = find(e[i].u), y = find(e[i].v);
+        if(x == y) continue;    //如果两条边已经联通那么跳过 
+        ans += e[i].w;
+        fa[x] = y;  //将两个点合并 
+        if(++cnt == n - 1) break; //当n - 1条边时结束 
+    }
+}
+int main(){
+    n = read(); m = read();
+    for(int i = 1; i &lt;= m; i++){
+        int x, y, z; 
+        x = read(); y = read(); z = read();
+        e[i].u = x; e[i].v = y; e[i].w = z;
+    }
+    Kruskal();
+    printf(&quot;%d\n&quot;, ans);
+    return 0;
+}
+</code></pre>
+<p>我们来模拟一遍这个图。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201117210216022-2037324460.png" />
+很明显，得出了正确的答案。那么这就是$Kruskal$算法，我们要灵活的应用它，有时我们需要求最大生成树，我们只要反着排序就可以了。
+完结撒花ヾ(✿ﾟ▽ﾟ)ノ</p>
 
 
 
@@ -940,10 +1158,10 @@ docs/
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
     
   </body>

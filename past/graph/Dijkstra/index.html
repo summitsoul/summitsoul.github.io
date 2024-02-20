@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../MST/">
       
-        <link rel="next" href="past/">
+      
+        <link rel="next" href="../SPFA/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
-        <title>Welcome to MkDocs - summitsoul's note</title>
+        <title>最短路问题$（1）$ - summitsoul's note</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -38,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#1" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="summitsoul&#39;s note" class="md-header__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
+    <a href="../../.." title="summitsoul&#39;s note" class="md-header__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              最短路问题$（1）$
             
           </span>
         </div>
@@ -187,7 +189,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="summitsoul&#39;s note" class="md-nav__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
+    <a href="../../.." title="summitsoul&#39;s note" class="md-nav__button md-logo" aria-label="summitsoul's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -197,6 +199,71 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -216,130 +283,7 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            Home
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Welcome to MkDocs
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Welcome to MkDocs
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project layout
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -353,7 +297,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             迁移
@@ -367,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -425,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/dp/2066%E6%9C%BA%E5%99%A8%E5%88%86%E9%85%8D/" class="md-nav__link">
+      <a href="../../dp/2066%E6%9C%BA%E5%99%A8%E5%88%86%E9%85%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,19 +395,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -477,7 +423,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             图论
@@ -491,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/LCA/" class="md-nav__link">
+      <a href="../LCA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -512,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/topo/" class="md-nav__link">
+      <a href="../topo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -533,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/MST/" class="md-nav__link">
+      <a href="../MST/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,10 +497,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="past/graph/Dijkstra/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    最短路问题$（1）$
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -563,6 +529,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      闲扯
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闲扯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原因
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      $Dijkstra$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$Dijkstra$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体例子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -575,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/SPFA/" class="md-nav__link">
+      <a href="../SPFA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/forwardstar/" class="md-nav__link">
+      <a href="../forwardstar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/graph/1967%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" class="md-nav__link">
+      <a href="../1967%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/numtry/%E8%B4%A8%E6%95%B0%E7%AD%9B/" class="md-nav__link">
+      <a href="../../numtry/%E8%B4%A8%E6%95%B0%E7%AD%9B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -704,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/numtry/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../numtry/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/misc/basic/" class="md-nav__link">
+      <a href="../../misc/basic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="past/misc/STL/" class="md-nav__link">
+      <a href="../../misc/STL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,20 +917,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      闲扯
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闲扯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原因
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Project layout
+      背景
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      $Dijkstra$
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="$Dijkstra$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体例子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -879,21 +1015,90 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h1 id="1">最短路问题$（1）$</h1>
+<h2 id="_1">闲扯</h2>
+<h3 id="_2">原因</h3>
+<p>本蒟蒻记性不太好怕忘（一样的说辞ヽ(ー_ー)ノ），咳，写这篇最短路的文章来扎实自己的基础（同时让自己搞的更明白点）。</p>
+<h3 id="_3">背景</h3>
+<p>在做图论题的时候，我们往往会通过最短路来进行一些操作，在这篇和下篇文章里我将会介绍$Dijkstra$和$SPFA$两种常见的方法来解决最短路问题。</p>
+<h2 id="dijkstra">$Dijkstra$</h2>
+<h3 id="_4">背景</h3>
+<p>$Dijkstra$可以说是最经典的最短路算法之一了，也是我们在进行算法比赛时在无负边权图时首选的算法（$SPFA$已废，$Dijstra$当立（划去））。这种算法是由荷兰计算机大神$Edsger Wybe Dijkstra$创造的方法，也以他的名字命名。</p>
+<h3 id="_5">分析</h3>
+<p>$Dijkstra$的思路是：设置定点集合$S$，首先将起始点加入该集合，然后根据起始点到其他定点的路径长度，选择长度最小的定点加入集合，根据所加入定点更新远点到其他定点的路径长度，然后再选取最小变的定点。一次来做，知道求解出到达所有定点的路径长度，然后再选取最小边的定点。一次来做，知道求解出到达所有定点的路径长度。（百度给的解释真是简洁晦涩(^_−)☆）。我是这样理解的，这时一个贪心的思路来做的，首先我们开一个数组记录将所有的路径权重$dis[N]$都设为$Max$，我们找到我们的起点$u$，将其表记起来，将起点的路径权重设为$0$，然后将它所能直接到达的点将他们的路径权重设为$dis[v] = w[u,v]$，然后我们将$dis$数组中的最小值，这个值就是起点到这个点的最小路径，我们将这个点添加到一个集合当中，这个顶点就不再需要更新了，接下来，我们观察新加入的顶点是否可以到达其他顶点，并且通过这个顶点到达是否距离比起点开始距离要近，如果是的话，我们就再将这个顶点添加入之前的集合当中，接下来就在此重复上述的操作，直到我们往里面添加顶点的数组中已经包含了图的所有顶点。</p>
+<h3 id="_6">具体例子</h3>
+<p>接下来我们来看一个具体的例子来更好的理解$Dijkstra$算法。我们来看这样的一个场景。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115191834544-348854061.png" />
+在这张图中，我们需要求出从点$1$到点$6$的最短路径，在这里我们用之前提到的链式前向星来存图，不了解的可以看看<a href="https://www.cnblogs.com/zjh3928/p/13973015.html">链式前向星</a>。
+这里我们首先找到起点$1$并将$1$点的距离设为$0$，并标记上已访问。然后找出它可以直接到达的顶点$2$和$3$，并更新他们的距离。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115195713659-482652918.png" />
+这时我们看到到$3$的距离最小是$3$那么我们便将$3$这个点标记上。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115195822738-1281235686.png" />
+这时我们再从点$3$出发，发现他可以到达$2、4、5$三个点，更新他们。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115195942237-1462131557.png" />
+我们看到从点$3$到点$2$比从点$1$到点$2$的距离还要短，所以我们决定从$1$到$3$到$2$，标记上点$2$。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115200125892-2141622217.png" />
+这时我们再从$2$点出发，与点$2$相连接的为4点，我们发现从$2$到$4$比原来的距离要远，所以更新并标记点$4$。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115200618318-1463919578.png" />
+然后再更新与点$4$连接的点$5$和点$6$。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115200748661-1538711924.png" />
+我们可以发现点$5$无法再更新了，记录下点$5$。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115200849600-935143236.png" />
+然后到达点$6$，并标记。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115201119515-23677120.png" />
+这时我们发现所有的点已经都被标记了，所以我们就得到的最短路。</p>
+<h3 id="_7">代码实现</h3>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+#define INF 0x3f3f3f
+using namespace std;
+const int maxn = 1e5 + 10;
+int n, m, cnt = 0;
+int head[maxn], dis[maxn], vis[maxn];
+struct edge{
+    int to, next, w;
+}e[maxn];
+void add(int u, int v, int w){
+    e[++cnt].next = head[u];
+    e[cnt].to = v;
+    e[cnt].w = w;
+    head[u] = cnt;
+}
+void Dijkstra(){
+    dis[1] = 0;
+    for(int i = 1; i &lt; n; i++){
+        int minn = INF, now;
+        for(int j = 1; j &lt;= n; j++)
+            if(!vis[j] &amp;&amp; dis[j] &lt; minn){
+                minn = dis[j];
+                now = j;
+            }
+        vis[now] = true;
+        for(int j = head[now]; j; j = e[j].next){
+            int to = e[j].to;
+            if(!vis[to]) dis[to] = min(dis[to], dis[now] + e[j].w);
+        }
+    }
+} 
+int main(){
+    memset(dis, INF, sizeof(dis));
+    memset(vis, false, sizeof(vis));
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    for(int i = 1; i &lt;= m; i++){
+        int u, v, w; scanf(&quot;%d %d %d&quot;, &amp;u, &amp;v, &amp;w);
+        add(u, v, w);   //存储单向图,如果存储双向图的话加上add(v, u, w); 
+    }
+    int s = 1, t = n; //s为起点,w为终点
+    Dijkstra();
+    printf(&quot;%d\n&quot;, dis[t]);
+    return 0; 
+}
 </code></pre>
+<p>我们来模拟一遍这个图。
+<img alt="" src="https://img2020.cnblogs.com/blog/2190440/202011/2190440-20201115230608958-623279958.png" />
+芜湖~可以看出我们得出了正确的结果。那么这就是$Dijkstra$算法的模板了，在做题过程中我们需要灵活的运用才能够取得理想的成绩。
+完结撒花ヾ(✿ﾟ▽ﾟ)ノ</p>
 
 
 
@@ -940,10 +1145,10 @@ docs/
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
     
   </body>
